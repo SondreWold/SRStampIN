@@ -19,28 +19,39 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   textField: {
-    width: 10,
+    width: 250,
   }
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.onButtonPress = this.onButtonPress.bind(this);
+  }
+
   state = {
     response: ''
   };
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/log/0181');
+  callApi = async (id) => {
+    let request = '/api/log/' + id;
+    const response = await fetch(request);
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     return body;
-
   };
+
+  onButtonPress(){
+    let id = document.getElementById('id-input').value;
+    this.callApi(id)
+      .then(res => this.setState({ response: res.express }))
+      .catch(err => console.log(err));
+    // this.setState({ response: id });
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -55,7 +66,7 @@ class App extends Component {
         <div className="cardContainerDiv">
           <Card className="StatusCard">
             <TextField className={classes.textField} id="id-input" label="Enter your ID"></TextField>
-            <Button>Log IN/OUT</Button>
+            <Button onClick={this.onButtonPress}>Log IN/OUT</Button>
           </Card>
         </div>
       </div>
