@@ -19,14 +19,16 @@ const styles = theme => ({
 
   },
   StatusCard: {
+    'background-color': '#0cbaff',
     width: 500,
     height: 200,
     margin: 'auto',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   textField: {
     margin: 'auto',
-    top: 0,
+    top: 10,
     width: 150,
     display: 'flex',
   }
@@ -39,7 +41,8 @@ class App extends Component {
   }
 
   state = {
-    response: ''
+    response: '',
+    cardColor: '#ff0c4d',
   };
 
   componentDidMount() {
