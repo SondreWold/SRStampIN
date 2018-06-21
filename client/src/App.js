@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './Sportradar.png';
 import './App.css';
 //import { Card, CardText, CardTitle } from '@material-ui/core/Card';
 import { withStyles } from '@material-ui/core/styles';
@@ -15,6 +15,7 @@ const styles = theme => ({
     margin: 'auto',
   },
   cardContainerDiv: {
+    padding: 20,
     'background-color': '#ffffffff',
 
   },
@@ -80,7 +81,6 @@ class App extends Component {
             <TextField className={classes.textField} id="id-input" label="Enter ID"></TextField>
               <Button className={classes.buttonStyle} onClick={this.onButtonPress}>Log IN/OUT</Button>
           </Card>
-
         </div>
       </div>
     );
