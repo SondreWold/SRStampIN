@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import { Card, CardText, CardTitle } from '@material-ui/core/Card';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+
+const styles = theme => ({
+  cardContainerDiv: {
+    'background-color': '#ffffffff',
+  },
+  StatusCard: {
+    'background-color': 'blue',
+    width: 50,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  textField: {
+    width: 10,
+  }
+});
 
 class App extends Component {
   state = {
@@ -19,10 +40,9 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
     return body;
 
-
-
   };
   render() {
+    const { classes } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -32,9 +52,15 @@ class App extends Component {
         <p className="App-intro">
           Request response: {this.state.response}
         </p>
+        <div className="cardContainerDiv">
+          <Card className="StatusCard">
+            <TextField className={classes.textField} id="id-input" label="Enter your ID"></TextField>
+            <Button>Log IN/OUT</Button>
+          </Card>
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

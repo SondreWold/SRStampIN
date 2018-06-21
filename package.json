@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^1.2.3",
+    "@material/card": "^0.36.1",
     "contentful": "^6.1.1",
     "express": "^4.16.2",
     "nano": "^6.4.4",
