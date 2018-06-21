@@ -15,12 +15,10 @@ const styles = theme => ({
     margin: 'auto',
   },
   cardContainerDiv: {
-    padding: 20,
     'background-color': '#ffffffff',
 
   },
   StatusCard: {
-    'background-color': '#0cbaff',
     width: 500,
     height: 200,
     margin: 'auto',
@@ -81,6 +79,7 @@ class App extends Component {
             <TextField className={classes.textField} id="id-input" label="Enter ID"></TextField>
               <Button className={classes.buttonStyle} onClick={this.onButtonPress}>Log IN/OUT</Button>
           </Card>
+
         </div>
       </div>
     );
