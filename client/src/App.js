@@ -9,17 +9,26 @@ import TextField from '@material-ui/core/TextField';
 
 
 const styles = theme => ({
+  buttonStyle: {
+    'background-color': '#4374c1',
+    top: 30,
+    margin: 'auto',
+  },
   cardContainerDiv: {
     'background-color': '#ffffffff',
+
   },
   StatusCard: {
-    'background-color': 'blue',
-    width: 50,
-    display: 'flex',
-    flexDirection: 'column',
+    width: 500,
+    height: 200,
+    margin: 'auto',
+    justifyContent: 'center',
   },
   textField: {
-    width: 250,
+    margin: 'auto',
+    top: 0,
+    width: 150,
+    display: 'flex',
   }
 });
 
@@ -64,10 +73,11 @@ class App extends Component {
           Request response: {this.state.response}
         </p>
         <div className="cardContainerDiv">
-          <Card className="StatusCard">
-            <TextField className={classes.textField} id="id-input" label="Enter your ID"></TextField>
-            <Button onClick={this.onButtonPress}>Log IN/OUT</Button>
+          <Card className={classes.StatusCard}>
+            <TextField className={classes.textField} id="id-input" label="Enter ID"></TextField>
+              <Button className={classes.buttonStyle} onClick={this.onButtonPress}>Log IN/OUT</Button>
           </Card>
+
         </div>
       </div>
     );
