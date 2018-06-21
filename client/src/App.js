@@ -61,6 +61,8 @@ class App extends Component {
       .then(res => this.setState({ response: res.express }))
       .catch(err => console.log(err));
     // this.setState({ response: id });
+    let doneStatus = this.state.response.done;
+    this.setState({})
   }
 
   render() {
@@ -69,7 +71,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to StampIN</h1>
         </header>
         <p className="App-intro">
           Request response: {this.state.response}
