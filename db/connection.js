@@ -1,6 +1,6 @@
 var nano = require('nano')('http://localhost:5984')
-nano.db.create('userMapping')
-var books = nano.db.use('userMapping')
+nano.db.create('usermapping')
+var books = nano.db.use('usermapping')
 
 // Insert a book document in the books database
 books.insert({ phoneID: '123456789' }, null, function (err, body) {
